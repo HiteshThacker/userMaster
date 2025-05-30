@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  
+  <form method="POST" action="/profile">
+    <h2>Welcome, <%= user.name %>!</h2>
+    <input type="hidden" name="email" value="<%= user.email %>">
+
+    <label>Name:</label><br>
+    <input type="text" name="name" value="<%= user.name %>" required><br><br>
+
+    <label>Mobile Number:</label><br>
+    <input type="text" name="number" value="<%= user.number %>" required><br><br>
+
+    <button class="btn" type="submit">Update</button>
+    <a href="/logout" class="btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    <% if (message) { %>
+      <p style="color: green;"><%= message %></p>
+    <% } %>
+  </form>
+
+
+
+
+</body>
+</html>
